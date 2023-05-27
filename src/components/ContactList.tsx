@@ -7,17 +7,20 @@ interface IContactListProps {
         tag: string;
         imageUrl: string;
     }>;
+    onDelete: (id: number) => void;
 }
 
-function ContactList({contacts}: IContactListProps) {
+function ContactList({contacts, onDelete}: IContactListProps) {
     return (
         <div>
             {contacts.map((contact, i) => (
                 <ContactItem
                     key={i}
+                    id={contact.id}
                     imageUrl={contact.imageUrl}
                     name={contact.name}
                     tag={contact.tag}
+                    onDelete={onDelete}
                 />
             ))}
         </div>
