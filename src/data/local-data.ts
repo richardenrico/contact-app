@@ -61,12 +61,14 @@ export function deleteContact(id: number) {
     contacts = contacts.filter((contact) => contact.id !== id);
 }
 
-
-
 export function editContact({ id, name, tag }: IEditContactParameter) {
     const contactToEdit = contacts.find((contact) => contact.id === id);
-    contactToEdit?.name = name;
-    contactToEdit?.tag = tag;
+    if (contactToEdit) {
+        contactToEdit.name = name;
+    }
+    if (contactToEdit) {
+        contactToEdit.tag = tag;
+    }
 
     contacts = contacts.map((contact) => {
         if (contact.id === id) {
