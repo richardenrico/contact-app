@@ -1,9 +1,13 @@
-import ContactInput from "../components/ContactInput";
-import { addContact } from "../data/local-data";
+import { useNavigate } from 'react-router-dom';
+import ContactInput from '../components/ContactInput';
+import { addContact } from '../data/local-data';
 
 function AddPage() {
+    const navigate = useNavigate();
+
     function handleAddContact(name: string, tag: string) {
-        addContact({name, tag});
+        addContact({ name, tag });
+        navigate('/');
     }
 
     return (
