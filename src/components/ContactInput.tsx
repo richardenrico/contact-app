@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "./Input";
+import { useNavigate } from "react-router-dom";
 
 interface IContactInputProps {
   handleAddContact: (name: string, tag: string) => void;
@@ -11,9 +12,12 @@ function ContactInput({ handleAddContact }: IContactInputProps) {
     tag: "",
   });
 
+  const navigate = useNavigate();
+
   function handleSubmit(e: any) {
     e.preventDefault();
     handleAddContact(userValue.name, userValue.tag);
+    navigate('/')
   }
 
   return (
