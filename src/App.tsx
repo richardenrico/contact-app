@@ -3,6 +3,8 @@ import HomePage from "./pages/HomePage";
 import AddPage from "./pages/AddPage";
 import Navigation from "./components/Navigation";
 import DetailPage from "./pages/DetailPage";
+import PostListPage from "./pages/PostListPage";
+import PostListTapiHanyaLimaPuluh from "./pages/PostListTapiHanya50";
 
 function App() {
   return (
@@ -14,8 +16,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/:id" element={<DetailPage />} />
         <Route path="/add" element={<AddPage />} />
+        <Route path="/daftar-post" element={<PostListPage />} />
+        <Route
+          path="/daftar-post-50"
+          element={<PostListTapiHanyaLimaPuluh />}
+        />
       </Routes>
-
     </div>
   );
 }
